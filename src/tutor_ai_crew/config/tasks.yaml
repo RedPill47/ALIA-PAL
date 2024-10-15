@@ -1,0 +1,44 @@
+process_file:
+  description: >
+    Take a deep breath and work on this step by step.
+    Extract and process information from the provided {pdf} file.
+    Scans the entire document for the {query} requested.
+    Make sure you extract only the {query} from the document.
+  expected_output: >
+    Extracted {query} as it is, from the {pdf} file, without any modification.
+  agent: file_manager
+
+adapt_learning_path:
+  description: >
+    Take a deep breath and work on this step by step.
+    Create a comprehensive and engaging course based on the provided lesson for {student_name} and tailor it according to the student's preferences: {learning_preferences}, its level: {student_level} and progress.
+    DO NOT include the quiz in the lesson, let the Practical Tutor Agent handle that. 
+  expected_output: >
+    A complete and ready-to-deliver tailored lesson explaining the important concepts of the course.
+    Formatted as markdown without '```'
+  agent: tutor
+  output_file: lesson.md
+
+create_quiz:
+  description: >
+    Take a deep breath and work on this step by step.
+    Create an interactive quiz based on the provided lesson.
+    Make sure the quiz is engaging and reinforces the theoretical knowledge of the course.
+    Take into account the student's preferences: {learning_preferences}, its level: {student_level} and progress.
+  expected_output: >
+    An interactive quiz of 10 questions based on the provided tailored lesson.
+    Formatted as JSON with the quiz questions and answers without '```'.
+  agent: practical
+  output_file: quiz.json
+
+create_teaching_prompts:
+  description: >
+    Take a deep breath and work on this step by step.
+    Create a detailed teaching prompt that guide an AI agent tutor on how to effectively deliver the course material and the quiz to the student {student_name}.
+    Make sure the prompts are structured and easy to follow for a LLM.
+  expected_output: >
+    A a detailed teaching prompt explaining how to teach the best way each section of the lesson and quiz.
+    Formatted as markdown without '```'
+  agent: teacher_persona
+  output_file: teaching_prompts.md
+  context: [adapt_learning_path, create_quiz]
