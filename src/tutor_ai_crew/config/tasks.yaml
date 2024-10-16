@@ -42,3 +42,16 @@ create_teaching_prompts:
   agent: teacher_persona
   output_file: teaching_prompts.md
   context: [adapt_learning_path, create_quiz]
+
+coordinator_task:
+  description: >
+    Validate the content created by the agents.
+    Ensure that the materials align with the educational goals and that the quiz match the student's abilities.
+
+    Student's information:
+    - Name: {student_name}
+    - Level: {student_level}
+    - Preferences: {learning_preferences}
+
+  expected_output: >
+    Validated learning materials and quizzes ready for delivery to the student.
