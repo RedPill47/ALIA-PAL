@@ -48,7 +48,6 @@ class TutorAiCrewCrew():
 		return Task(
 		config=self.tasks_config['adapt_learning_path'],
 		output_file='output/lesson.md',
-		#async_execution=True,
 		)
 	
 	@task
@@ -56,7 +55,6 @@ class TutorAiCrewCrew():
 		return Task(
 		config=self.tasks_config['create_quiz'],
 		output_file='output/quiz.json',
-		#async_execution=True,
 		)
 	
 	@task
@@ -64,7 +62,6 @@ class TutorAiCrewCrew():
 		return Task(
 		config=self.tasks_config['create_teaching_prompts'],
 		output_file='output/teaching_prompts.md',
-		#human_input=True,     Make sure to check with a human if the draft is good before finalizing your answer.
 		)
 
 	@crew
@@ -73,10 +70,8 @@ class TutorAiCrewCrew():
 		return Crew(
 			agents=self.agents, # Automatically created by the @agent decorator
 			tasks=self.tasks, # Automatically created by the @task decorator
-			process=Process.sequential,
-			#process=Process.hierarchical,
+			process=Process.hierarchical,
 			memory=True,
 			verbose=True,
-			#planning=True, # gives better outputs but takes more time
-			#manager_llm=ChatOpenAI(model="gpt-4o")
+			manager_llm=ChatOpenAI(model="gpt-4o")
 		)
