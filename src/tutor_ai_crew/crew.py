@@ -2,8 +2,6 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import PDFSearchTool
 
-from langchain_openai import ChatOpenAI
-
 @CrewBase
 class TutorAiCrewCrew():
 	"""TutorAiCrew crew"""
@@ -36,6 +34,14 @@ class TutorAiCrewCrew():
 		config=self.agents_config['teacher_persona'],
 		verbose=True,
 		)
+		
+	@agent
+	def coordinator(self) -> Agent:
+		return Agent(
+		config=self.agents_config['coordinator'],
+		verbose=True,
+		allow_delegation=True,
+		)
 
 	@task
 	def process_file(self) -> Task:
@@ -63,7 +69,13 @@ class TutorAiCrewCrew():
 		config=self.tasks_config['create_teaching_prompts'],
 		output_file='output/teaching_prompts.md',
 		)
-
+		
+	@task
+	def coordinator_task(self) -> Task:
+		return Task(
+		config=self.tasks_config['coordinator_task'],
+		)
+		
 	@crew
 	def crew(self) -> Crew:
 		"""Creates the TutorAiCrew crew"""
@@ -73,5 +85,5 @@ class TutorAiCrewCrew():
 			process=Process.hierarchical,
 			memory=True,
 			verbose=True,
-			manager_llm=ChatOpenAI(model="gpt-4o")
+			manager_llm=self.coordinator()
 		)
