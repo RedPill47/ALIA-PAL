@@ -1,0 +1,74 @@
+{
+    "quiz_title": "Simplified Interactive Quiz on Function Calls in Python",
+    "questions": [
+      {
+        "question": "What does a function do in Python?",
+        "options": [
+          "A) It makes the program run slower.",
+          "B) It organizes code into reusable blocks.",
+          "C) It closes the program.",
+          "D) It has no effect on the code."
+        ],
+        "correct_answer": "B",
+        "explanation": "A function helps organize code into reusable blocks, making it easier to understand and maintain."
+      },
+      {
+        "question": "How do you call a function in Python?",
+        "options": [
+          "A) By writing its name followed by parentheses.",
+          "B) By just writing its name without anything.",
+          "C) By using a special keyword.",
+          "D) Functions cannot be called."
+        ],
+        "correct_answer": "A",
+        "explanation": "To call a function, you write its name followed by parentheses, e.g., `my_function()`."
+      },
+      {
+        "question": "What keyword do you use to define a function in Python?",
+        "options": [
+          "A) create",
+          "B) function",
+          "C) def",
+          "D) define"
+        ],
+        "correct_answer": "C",
+        "explanation": "The keyword `def` is used to define a function in Python, followed by the function name and parentheses."
+      },
+      {
+        "question": "What will this code print?",
+        "code": "def greet():\n    print(\"Hello, World!\")\ngreet()",
+        "options": [
+          "A) Hello",
+          "B) Hello, World!",
+          "C) World!",
+          "D) Nothing"
+        ],
+        "correct_answer": "B",
+        "explanation": "The `greet()` function prints \"Hello, World!\", so when we call the function, it outputs this text."
+      },
+      {
+        "question": "What can you pass to a function as parameters?",
+        "options": [
+          "A) Only numbers",
+          "B) Only strings",
+          "C) Any type of data",
+          "D) No data is allowed"
+        ],
+        "correct_answer": "C",
+        "explanation": "You can pass any type of data to a function as parameters, including numbers, strings, lists, and more."
+      },
+      {
+        "question": "What is the output of the following code?",
+        "code": "def add(a, b):\n    return a + b\n\nresult = add(3, 5)\nprint(result)",
+        "options": [
+          "A) 8",
+          "B) 35",
+          "C) 3+5",
+          "D) Error"
+        ],
+        "correct_answer": "A",
+        "explanation": "The `add` function takes two parameters, adds them, and returns the result, which is then printed. In this case, `3 + 5` equals `8`."
+      }
+    ],
+    "description": "This quiz focuses on the fundamental aspects of function calls in Python. It uses simple language and direct questions to reinforce key concepts while ensuring it remains accessible and easy to understand."
+  }  
