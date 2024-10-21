@@ -2,6 +2,11 @@ from decision_engine import DecisionEngineAgent
 from monitor_agent import MonitorAgent
 from profile_agent import ProfileAgent
 
+LANGCHAIN_TRACING_V2=True
+LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+LANGCHAIN_API_KEY="api_key"
+LANGCHAIN_PROJECT="ALIA-PAL"
+
 def main():
     # Initialize the agents
     decision_engine = DecisionEngineAgent()
