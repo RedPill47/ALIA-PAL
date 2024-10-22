@@ -1,0 +1,23 @@
+# src/langgraph_system/config/edges_config.yaml
+
+edge_fetch_student_profile:
+  from_node: Monitor Node
+  to_node: Student Profile Node
+
+edge_update_student_profile:
+  from_node: Monitor Node
+  to_node: Student Profile Node
+
+edge_monitor_to_decision:
+  from_node: Monitor Node
+  to_node: Decision Engine Node
+
+edge_decision_to_crewai:
+  from_node: Decision Engine Node
+  to_node: Educational CrewAI Node
+  condition: adjustment_needed == True
+
+edge_decision_to_monitor:
+  from_node: Decision Engine Node
+  to_node: Monitor Node
+  condition: adjustment_needed == False
