@@ -1,0 +1,55 @@
+# my_agent/crew/agents.py
+
+from crewai import Agent
+from textwrap import dedent
+from crewai_tools import PDFSearchTool
+
+class TutorAgents:
+    def file_manager(self):
+        return Agent(
+            role='File Manager',
+            goal=dedent("""\
+                Prepare course materials by extracting relevant sections, ensuring they are ready for further processing by the Tutor Agent.
+            """),
+            backstory=dedent("""\
+                I process course materials provided by the teacher, extract relevant content, and prepare them for further use by other agents.
+            """),
+            tools=[PDFSearchTool()],
+            verbose=True
+        )
+
+    def tutor(self):
+        return Agent(
+            role='Learning Path Tutor',
+            goal=dedent("""\
+                Create personalized courses that adapt to students' learning styles and preferences.
+            """),
+            backstory=dedent("""\
+                I'm a professor and personal tutor, designed to construct and adapt learning paths tailored to students' evolving needs.
+            """),
+            verbose=True
+        )
+
+    def practical(self):
+        return Agent(
+            role='Practical Tutor',
+            goal=dedent("""\
+                Create interactive quizzes that reinforce the theoretical knowledge of the course.
+            """),
+            backstory=dedent("""\
+                I'm a professor and tutor that focuses on applying theoretical knowledge through interactive quizzes.
+            """),
+            verbose=True
+        )
+
+    def teacher_persona(self):
+        return Agent(
+            role='Teacher Prompt Persona',
+            goal=dedent("""\
+                Create detailed teaching prompts that guide tutors on how to effectively deliver course materials to students.
+            """),
+            backstory=dedent("""\
+                I'm an experienced educator responsible for translating course material and quizzes into structured teaching prompts for tutors.
+            """),
+            verbose=True
+        )
