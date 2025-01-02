@@ -1,6 +1,6 @@
-# LangGraph Cloud Example
+# ALIA-PAL in LangGraph Cloud
 
-![](static/agent_ui.png)
+![](static/graph_ui.png)
 
 This is an example agent to deploy with LangGraph Cloud.
 
