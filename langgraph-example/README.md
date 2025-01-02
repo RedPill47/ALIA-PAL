@@ -1,6 +1,6 @@
 # LangGraph Cloud Example
 
-![](static/agent_ui.png)
+![](static/graph_ui.png)
 
 This is an example agent to deploy with LangGraph Cloud.
 
