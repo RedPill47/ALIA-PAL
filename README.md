@@ -1,14 +1,56 @@
-# ALIA-PAL in LangGraph Cloud
+# ALIA-PAL: Agents Intelligents pour l'Apprentissage Personnalisé
 
 ![](static/graph_ui.png)
 
-This is an example agent to deploy with LangGraph Cloud.
+![](static/ui.png)
 
-> [!TIP]
-> If you would rather use `pyproject.toml` for managing dependencies in your LangGraph Cloud project, please check out [this repository](https://github.com/langchain-ai/langgraph-example-pyproject).
+ALIA-PAL is an innovative educational framework that leverages artificial intelligence to provide personalized and adaptive learning experiences. The system combines LangGraph's decision-making capabilities with CrewAI's multi-agent architecture to create a dynamic learning environment that continuously adapts to student needs.
 
-[LangGraph](https://github.com/langchain-ai/langgraph) is a library for building stateful, multi-actor applications with LLMs. The main use cases for LangGraph are conversational agents, and long-running, multi-step LLM applications or any LLM application that would benefit from built-in support for persistent checkpoints, cycles and human-in-the-loop interactions (ie. LLM and human collaboration).
+## Key Features
 
-LangGraph shortens the time-to-market for developers using LangGraph, with a one-liner command to start a production-ready HTTP microservice for your LangGraph applications, with built-in persistence. This lets you focus on the logic of your LangGraph graph, and leave the scaling and API design to us. The API is inspired by the OpenAI assistants API, and is designed to fit in alongside your existing services.
+- Dynamic scaffolding adaptation based on real-time student performance
+- Multi-agent system for specialized educational tasks
+- Integration with teacher-provided materials through RAG
+- Real-time monitoring and adjustment of learning paths
+- Structured human-in-the-loop validation process
 
-In order to deploy this agent to LangGraph Cloud you will want to first fork this repo. After that, you can follow the instructions [here](https://langchain-ai.github.io/langgraph/cloud/) to deploy to LangGraph Cloud.
+## Architecture
+
+The system uses LangGraph as its core decision-making engine while implementing specialized educational agents through CrewAI. This dual-layer approach enables both high-level learning strategy orchestration and granular pedagogical interventions.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.11
+- LangGraph Cloud account
+- OpenAI API key
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/RedPill47/ALIA-PAL.git
+```
+
+2. Navigate to the project directory and launch LangGraph Cloud:
+```bash
+cd ALIA-PAL
+langgraph dev
+```
+
+This will start the LangGraph Cloud server. You can access the Studio UI through the provided link:
+🎨 Studio UI: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024
+
+### Configuration
+
+1. In the Studio UI, locate the Configurable section
+2. Set the Model Name to "openai"
+
+### Using the Chatbot
+
+1. Click the + Message button in the interface
+2. Type your query
+3. Click Submit
+4. Watch the graph execution on the left panel
+5. View the conversation thread on the right panel
